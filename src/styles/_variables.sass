@@ -1,0 +1,62 @@
+//-------------------------------------------------------------------
+// Colors
+//-------------------------------------------------------------------
+
+// Grayscale
+//-------------------------------------------------------------------
+
+$white          : #FFFFFF
+$gray-xx-light  : #F6F6F6
+$gray-x-light   : #DBE0EB
+$gray-light     : #ABADB5
+$gray-medium    : #525F7A
+$gray-dark      : #454A54
+$gray-x-dark    : #2E3038
+$black          : #000000
+
+  
+// Dimensions
+//-------------------------------------------------------------------
+// D stands for Dimension
+$d-base: 8px
+
+@function d($scale)
+  @return $d-base * $scale
+
+$s-medium: d(96)
+$s-small: d(65)
+
+
+// Shadows
+//-------------------------------------------------------------------
+
+$shadow: 0 4px 8px 0 rgba($black,0.2)
+$shadow-thick: 0 8px 16px 0 rgba($black, 0.2)
+
+
+// Timing and Easings
+//-------------------------------------------------------------------
+
+// t stands for Timing
+$t       : .35s
+$t-snap  : cubic-bezier(.3, .9, .4, .98)
+$t-drift : cubic-bezier(.05, .31, .7, 1)
+$t-shine : cubic-bezier(.96, .43, .55, .8)
+
+// Transitions
+//-------------------------------------------------------------------
+
+=transition-slow($properties:all)
+  transition: $properties $t*1.5 $t-drift
+  will-change: auto
+=transition-fast($properties:all)
+  transition: $properties $t $t-snap
+  will-change: auto
+
+  
+// Media Queries
+// -----------------------------------------------------------------------------
+
+=mq($size) 
+  @media only screen and (min-width: $size) 
+    @content

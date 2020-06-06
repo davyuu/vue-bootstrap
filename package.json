@@ -1,9 +1,9 @@
 {
-  "name": "vue-app-4.3.1",
+  "name": "vue-bootstrap",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -19,6 +19,8 @@
     "eslint": "^6.8.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-vue": "^6.2.2",
+    "sass": "^1.26.8",
+    "sass-loader": "^8.0.2",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-webpack-plugin": "^2.0.0",
     "vue-template-compiler": "^2.6.11"

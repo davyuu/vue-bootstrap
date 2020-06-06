@@ -8,7 +8,7 @@ module.exports = {
     "eslint:recommended"
   ],
   parserOptions: {
-    "parser": "babel-eslint"
+    parser: "babel-eslint"
   },
   rules: {
     "quote-props": ["warn", "as-needed"]
