@@ -11,6 +11,10 @@ module.exports = {
     parser: "babel-eslint"
   },
   rules: {
-    "quote-props": ["warn", "as-needed"]
+    "comma-dangle": ["warn", "never"],
+    "no-unused-vars": "warn",
+    "quotes": ["warn", "single"],
+    "quote-props": ["warn", "as-needed"],
+    "vue/no-unused-vars": "warn"
   }
 }

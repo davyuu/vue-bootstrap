@@ -23,6 +23,7 @@
     "sass-loader": "^8.0.2",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-webpack-plugin": "^2.0.0",
+    "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [
