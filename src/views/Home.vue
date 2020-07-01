@@ -1,5 +1,5 @@
 <template>
-  <div class='home'>
+  <div class='wrapper'>
 
     <Header/>
 
@@ -24,25 +24,23 @@ export default {
     Header,
     SectionCard
   },
-  data: () => {
-    return {
-      sections: [
-        {
-          key: 'page',
-          name: 'Page',
-          icon: 'web',
-          route: '/page'
-        }
-      ]
-    }
-  }
+  data: () => ({
+    sections: [
+      {
+        key: 'notes',
+        name: 'Notes',
+        icon: 'description',
+        route: '/notes'
+      }
+    ]
+  })
 }
 </script>
 
 <style lang='sass' scoped>
 @import '@/styles'
 
-.home
+.wrapper
   +page-padding
 
 header
