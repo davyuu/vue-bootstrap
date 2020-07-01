@@ -1,5 +1,5 @@
 <template>
-  <div class='home'>
+  <div class='wrapper'>
 
     <Header/>
 
@@ -28,10 +28,10 @@ export default {
     return {
       sections: [
         {
-          key: 'page',
-          name: 'Page',
-          icon: 'web',
-          route: '/page'
+          key: 'notes',
+          name: 'Notes',
+          icon: 'description',
+          route: '/notes'
         }
       ]
     }
@@ -42,7 +42,7 @@ export default {
 <style lang='sass' scoped>
 @import '@/styles'
 
-.home
+.wrapper
   +page-padding
 
 header
