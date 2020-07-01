@@ -1,20 +1,13 @@
 <template>
-  <div id="app">
-    <Header/>
-  </div>
+  <main>
+    <router-view/>
+  </main>
 </template>
-
-<script>
-import Header from './components/Header.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Header
-  }
-}
-</script>
 
 <style lang="sass">
 @import "@/styles"
+
+main
+  height: 100vh
+  width: 100vw
 </style>

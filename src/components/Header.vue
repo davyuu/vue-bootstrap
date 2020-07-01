@@ -11,7 +11,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass" scoped>
 @import "@/styles"
 
@@ -26,4 +25,5 @@ img
 
 h1
   margin: d(5)
+  +title-large
 </style>

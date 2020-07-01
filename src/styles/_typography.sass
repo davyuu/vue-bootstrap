@@ -1,0 +1,68 @@
+/* stylelint-disable max-empty-lines */
+//-------------------------------------------------------------------
+// Typography
+//-------------------------------------------------------------------
+
+// Font Families
+//-------------------------------------------------------------------
+
+$f-family-primary: 'Lato', sans-serif
+$f-family-secondary: serif
+
+// Typographic Scale
+//-------------------------------------------------------------------
+
+$fs-xx-large : 32px
+$fs-x-large  : 24px
+$fs-large    : 18px
+$fs-medium   : 16px
+$fs-small    : 14px
+$fs-x-small  : 12px
+$fs-xx-small : 11px
+
+// Font Weights
+//-------------------------------------------------------------------
+
+$fw-light       : 300
+$fw-regular     : 400
+$fw-medium      : 500
+$fw-semi-bold   : 600
+$fw-bold        : 700
+
+// Line heights
+//-------------------------------------------------------------------
+
+$line-height-single : 1
+$line-height-small  : 1.2
+$line-height-normal : 1.6
+$line-height-large  : 1.8
+
+// Font Styles
+//-------------------------------------------------------------------
+
+@mixin title-large
+  font-size: $fs-xx-large
+  font-weight: $fw-light
+  line-height: $line-height-small
+
+@mixin title-medium
+  font-size: $fs-x-large
+  font-weight: $fw-medium
+  line-height: $line-height-small
+
+@mixin title-small
+  font-size: $fs-large
+  font-weight: $fw-light
+  line-height: $line-height-small
+
+@mixin body-large
+  font-size: $fs-large
+  font-weight: $fw-regular
+
+@mixin body-medium
+  font-size: $fs-medium
+  font-weight: $fw-regular
+
+@mixin body-small
+  font-size: $fs-small
+  font-weight: $fw-regular

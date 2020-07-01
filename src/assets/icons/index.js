@@ -1,5 +1,5 @@
 const icons = {
-  // banner: require('./banner.svg'),
+  web: require('./web.svg')
 };
 
 export default icons;
