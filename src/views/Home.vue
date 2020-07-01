@@ -24,18 +24,16 @@ export default {
     Header,
     SectionCard
   },
-  data: () => {
-    return {
-      sections: [
-        {
-          key: 'notes',
-          name: 'Notes',
-          icon: 'description',
-          route: '/notes'
-        }
-      ]
-    }
-  }
+  data: () => ({
+    sections: [
+      {
+        key: 'notes',
+        name: 'Notes',
+        icon: 'description',
+        route: '/notes'
+      }
+    ]
+  })
 }
 </script>
 

@@ -11,9 +11,18 @@ const actions = {
     })
   },
 
-  createNote ({ commit }) {
-    mockNotes.createNote(note => {
-      commit('setNote', note)
+  async createNote ({ commit }, note) {
+    return await new Promise(resolve => {
+      mockNotes.createNote(
+        note,
+        (note) => {
+          commit('setNote', note)
+          resolve(note)
+        },
+        () => {
+          resolve()
+        }
+      )
     })
   }
 }

@@ -14,6 +14,13 @@
       </ul>
     </div>
 
+    <form @submit.prevent="submitForm">
+      <h2>Create a note</h2>
+      <input v-model="title"/>
+      <textarea v-model="body"/>
+      <button>Submit</button>
+    </form>
+
   </div>
 </template>
 
@@ -23,6 +30,10 @@ const { mapActions, mapGetters } = createNamespacedHelpers('notes')
 
 export default {
   name: 'Notes',
+  data: () => ({
+    title: '',
+    body: ''
+  }),
   computed: {
     ...mapGetters([
       'notes'
@@ -32,7 +43,18 @@ export default {
     ...mapActions([
       'getNotes',
       'createNote'
-    ])
+    ]),
+
+    async submitForm () {
+      const { title, body } = this
+      const note = {
+        title, body
+      }
+      if (await this.createNote(note)) {
+        this.title = ''
+        this.body = ''
+      }
+    }
   },
   created () {
     this.getNotes();
@@ -57,6 +79,7 @@ h1
   ul
     display: flex
     flex-wrap: wrap
+    margin: 0 d(-2)
 
     li
       width: 50%
@@ -77,4 +100,22 @@ h1
       margin-top: d(2)
       +body-medium
       +fc-dark
+
+form
+  display: flex
+  flex-direction: column
+  justify-content: center
+  margin-top: d(4)
+  padding: d(4) d(2)
+  border-radius: d(1)
+  box-shadow: $shadow
+
+  h2
+    +title-medium
+    text-align: center
+
+  input,
+  textarea,
+  button
+    margin-top: d(2)
 </style>
