@@ -54,7 +54,7 @@ export default {
         this.title = ''
         this.body = ''
       } else {
-        alert('failed')
+        alert('Failed, try again!')
       }
     }
   },

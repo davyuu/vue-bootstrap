@@ -4,12 +4,15 @@
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve",
+    "start:server": "cd mock && npm start",
+    "start:mocked:server": "concurrently \"npm run start\" \"npm run start:server\"",
     "build": "vue-cli-service build",
     "lint": "npm run eslint && npm run stylelint",
     "eslint": "eslint src --ext .js,.vue",
     "stylelint": "stylelint src/**/*.{sass,vue}"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
@@ -21,6 +24,7 @@
     "@vue/cli-plugin-router": "^4.4.4",
     "@vue/cli-service": "~4.4.0",
     "babel-eslint": "^10.1.0",
+    "concurrently": "^5.2.0",
     "eslint": "^6.8.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-vue": "^6.2.2",

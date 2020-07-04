@@ -1,28 +1,23 @@
-import { mockNotes } from '@/mock'
+import axios from 'axios'
 import { defaultStatus, defaultMutations, defaultGetters } from '@/store/helpers'
 
 const state = () => defaultStatus
 
 const actions = {
-  fetchNotes ({ commit }) {
-    mockNotes.getNotes(notes => {
-      commit('saveItems', notes)
-    })
+  async fetchNotes ({ commit }) {
+    const res = await axios.get('http://localhost:3000/notes')
+    commit('saveItems', res.data)
   },
 
   async createNote ({ commit }, note) {
-    return await new Promise(resolve => {
-      mockNotes.createNote(
-        note,
-        (note) => {
-          commit('saveItem', note)
-          resolve(note)
-        },
-        () => {
-          resolve()
-        }
-      )
-    })
+    try {
+      const res = await axios.post('http://localhost:3000/notes', { note })
+      commit('saveItem', res.data)
+      return res.data
+    } catch(error) {
+      commit('failed', error)
+      return null
+    }
   }
 }
 
