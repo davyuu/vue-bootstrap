@@ -35,13 +35,13 @@ export default {
     body: ''
   }),
   computed: {
-    ...mapGetters([
-      'notes'
-    ])
+    ...mapGetters({
+      notes: 'items'
+    })
   },
   methods: {
     ...mapActions([
-      'getNotes',
+      'fetchNotes',
       'createNote'
     ]),
 
@@ -53,11 +53,13 @@ export default {
       if (await this.createNote(note)) {
         this.title = ''
         this.body = ''
+      } else {
+        alert('Failed, try again!')
       }
     }
   },
   created () {
-    this.getNotes();
+    this.fetchNotes();
   }
 }
 </script>
