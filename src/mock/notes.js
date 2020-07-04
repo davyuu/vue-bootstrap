@@ -3,7 +3,7 @@
  */
 import uuid from 'uuid/v1'
 
-const notes = [
+let notes = [
   {
     id: '1',
     title: 'Note1',
@@ -33,12 +33,15 @@ export default {
 
   createNote(note, success, error) {
     setTimeout(() => {
-      if (Math.random() > 0.5) {
+      if (Math.random() > 0.2) {
         const newNote = {
           ...note,
           id: uuid()
         }
-        notes.push(newNote)
+        notes = [
+          ...notes,
+          newNote
+        ]
         success(newNote)
       } else {
         error()

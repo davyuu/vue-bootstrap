@@ -1,13 +1,12 @@
 import { mockNotes } from '@/mock'
+import { defaultStatus, defaultMutations, defaultGetters } from '@/store/helpers'
 
-const state = () => ({
-  notes: []
-})
+const state = () => defaultStatus
 
 const actions = {
-  getNotes ({ commit }) {
+  fetchNotes ({ commit }) {
     mockNotes.getNotes(notes => {
-      commit('setNotes', notes)
+      commit('saveItems', notes)
     })
   },
 
@@ -16,7 +15,7 @@ const actions = {
       mockNotes.createNote(
         note,
         (note) => {
-          commit('setNote', note)
+          commit('saveItem', note)
           resolve(note)
         },
         () => {
@@ -28,20 +27,11 @@ const actions = {
 }
 
 const mutations = {
-  setNotes (state, notes) {
-    state.notes = notes
-  },
-
-  setNote (state, note) {
-    state.notes = [
-      ...state.notes,
-      note
-    ]
-  }
+  ...defaultMutations
 }
 
 const getters = {
-  notes: s => s.notes
+  ...defaultGetters
 }
 
 export default {
