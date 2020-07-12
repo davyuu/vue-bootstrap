@@ -1,17 +1,19 @@
 import axios from 'axios'
 import { defaultStatus, defaultMutations, defaultGetters } from '@/store/helpers'
 
+const API_URL = 'http://localhost:3000';
+
 const state = () => defaultStatus
 
 const actions = {
   async fetchNotes ({ commit }) {
-    const res = await axios.get('http://localhost:3000/notes')
+    const res = await axios.get(`${API_URL}/notes`)
     commit('saveItems', res.data)
   },
 
   async createNote ({ commit }, note) {
     try {
-      const res = await axios.post('http://localhost:3000/notes', { note })
+      const res = await axios.post(`${API_URL}/notes`, { note })
       commit('saveItem', res.data)
       return res.data
     } catch(error) {
@@ -32,7 +34,7 @@ const getters = {
 export default {
   namespaced: true,
   state,
-  getters,
   actions,
-  mutations
+  mutations,
+  getters
 }

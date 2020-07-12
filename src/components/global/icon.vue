@@ -1,15 +1,11 @@
 <template>
   <div class="icon" :class="size">
     <component :is="component"/>
-    <!-- <div v-html="require(`@/assets/home/${icon}.svg`)"/> -->
   </div>
 </template>
 
 <script>
-import icons from '@/assets/icons';
-
 export default {
-  name: 'Icon',
   props: {
     icon: {
       type: String,
@@ -24,7 +20,7 @@ export default {
   },
   computed: {
     component () {
-      return icons[this.icon];
+      return require(`@/assets/icons/${this.icon}.svg`);
     }
   }
 }

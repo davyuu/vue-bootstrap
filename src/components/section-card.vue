@@ -1,18 +1,13 @@
 <template>
   <router-link class="card" :to='route'>
-    <Icon :icon='icon' size='large' />
+    <icon :icon='icon' size='large' />
     <p>{{ name }}</p>
   </router-link>
 </template>
 
 <script>
-import Icon from '@/components/Icon.vue'
 
 export default {
-  name: 'SectionCard',
-  components: {
-    Icon
-  },
   props: {
     icon: {
       type: String,
