@@ -6,7 +6,7 @@
     <div class='section'>
       <ul>
         <li v-for='note in notes' :key='note.id'>
-          <div class="card">
+          <div class="card" @click="openEditModal(note.id)">
             <p>{{ note.title }}</p>
             <p>{{ note.body }}</p>
           </div>
@@ -21,11 +21,17 @@
       <button>Submit</button>
     </form>
 
+    <modal name="edit-note">
+      Some Content
+      <button>test</button>
+    </modal>
+
   </div>
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+
 const { mapActions, mapGetters } = createNamespacedHelpers('notes')
 
 export default {
@@ -44,6 +50,10 @@ export default {
       'fetchNotes',
       'createNote'
     ]),
+
+    openEditModal() {
+      this.$modal.open('edit-note', { test: 'test' })
+    },
 
     async submitForm () {
       const { title, body } = this

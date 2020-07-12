@@ -1,12 +1,15 @@
 <template>
   <div class='wrapper'>
 
-    <Header/>
+    <header>
+      <img alt="Vue logo" src="@/assets/logo.png">
+      <h1>Welcome</h1>
+    </header>
 
     <div class='section'>
       <ul>
         <li v-for='section in sections' :key='section.key'>
-          <SectionCard v-bind='section'/>
+          <section-card v-bind='section'/>
         </li>
       </ul>
     </div>
@@ -15,13 +18,11 @@
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-import SectionCard from '@/components/SectionCard.vue'
+import SectionCard from '@/components/section-card'
 
 export default {
   name: 'Home',
   components: {
-    Header,
     SectionCard
   },
   data: () => ({

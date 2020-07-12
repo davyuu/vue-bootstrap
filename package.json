@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve",
-    "start:server": "cd mock && npm start",
-    "start:mocked:server": "concurrently \"npm run start\" \"npm run start:server\"",
+    "server": "cd mock && npm start",
+    "mocked:server": "concurrently \"npm run start\" \"npm run start:server\"",
     "build": "vue-cli-service build",
     "lint": "npm run eslint && npm run stylelint",
     "eslint": "eslint src --ext .js,.vue",
