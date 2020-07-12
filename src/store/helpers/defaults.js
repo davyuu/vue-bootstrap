@@ -1,36 +1,37 @@
+import Vue from 'vue'
+
 const defaultStatus = {
+  fetching: false,
+  fetched: false,
+  failed: false,
+  errors: []
+}
+const defaultState = {
   items: [],
-  status: {
-    fetching: false,
-    fetched: false,
-    failed: false,
-    errors: []
-  }
+  status: defaultStatus
 }
 
 const defaultMutations = {
   saveItems: (state, items) => {
-    state.items = items
+    Vue.set(state, 'items', items)
   },
   saveItem: (state, item) => {
-    state.items = [
-      ...state.items,
-      item
-    ]
+    const items = [...state.items, item]
+    Vue.set(state, 'items', items)
   },
   fetching: (state) => {
-    state.status.fetching = true
-    state.status.fetched = false
-    state.status.failed = false
+    const status = { ...defaultStatus, fetching: true }
+    Vue.set(state, 'status', status)
   },
   fetched: (state) => {
-    state.status.fetching = false
-    state.status.fetched = true
+    Vue.set(state.status, 'fetching', false)
+    Vue.set(state.status, 'fetched', true)
   },
   failed: (state, error) => {
-    state.status.failed = true
+    Vue.set(state.status, 'failed', true)
     if (error) {
-      state.status.errors.push(error)
+      const errors = [...state.status.errors, errors]
+      Vue.set(state.status, 'errors', errors)
     }
   }
 }
@@ -43,7 +44,7 @@ const defaultGetters = {
 }
 
 export {
-  defaultStatus,
+  defaultState,
   defaultMutations,
   defaultGetters
 }

@@ -14,22 +14,22 @@ const actions = {
 }
 
 const mutations = {
-  open: (s, { name, context }) => {
-    if (!s.data[name]) {
-      Vue.set(s.data, name, context)
+  open: (state, { name, context }) => {
+    if (!state.data[name]) {
+      Vue.set(state.data, name, context)
     } else {
       console.warn('$modal.open - open action rejected, modal is already open.')
     }
   },
-  close: (s, name) => {
-    Vue.delete(s.data, name)
+  close: (state, name) => {
+    Vue.delete(state.data, name)
   }
 };
 
 const getters = {
-  openModals: (s) => Object.keys(s.data),
-  modalOpen: (s) => (name) => !!s.data[name],
-  modalContext: (s) => (name) => s.data[name]
+  openModals: (state) => Object.keys(state.data),
+  modalOpen: (state) => (name) => !!state.data[name],
+  modalContext: (state) => (name) => state.data[name]
 };
 
 export default {

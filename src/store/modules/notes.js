@@ -1,9 +1,9 @@
 import axios from 'axios'
-import { defaultStatus, defaultMutations, defaultGetters } from '@/store/helpers'
+import { defaultState, defaultMutations, defaultGetters } from '@/store/helpers'
 
 const API_URL = 'http://localhost:3000';
 
-const state = () => defaultStatus
+const state = () => defaultState
 
 const actions = {
   async fetchNotes ({ commit }) {
