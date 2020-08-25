@@ -1,5 +1,5 @@
 const express = require('express');
-const uuid = require('uuid/v1');
+const { v1: uuid } = require('uuid');
 const { notes } = require('../state');
 
 const router = express.Router()
