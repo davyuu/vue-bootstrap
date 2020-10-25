@@ -35,7 +35,7 @@ import { createNamespacedHelpers } from 'vuex'
 const { mapActions, mapGetters } = createNamespacedHelpers('notes')
 
 export default {
-  name: 'Notes',
+  name: 'notes-view',
   data: () => ({
     title: '',
     body: ''

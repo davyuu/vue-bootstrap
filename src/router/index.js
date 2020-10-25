@@ -11,6 +11,10 @@ const routes = [
   {
     path: '/notes',
     component: () => import('@/views/notes')
+  },
+  {
+    path: '/form',
+    component: () => import('@/views/form')
   }
 ]
 

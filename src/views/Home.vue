@@ -21,7 +21,7 @@
 import SectionCard from '@/components/section-card'
 
 export default {
-  name: 'Home',
+  name: 'home-view',
   components: {
     SectionCard
   },
@@ -32,6 +32,12 @@ export default {
         name: 'Notes',
         icon: 'description',
         route: '/notes'
+      },
+      {
+        key: 'form',
+        name: 'Form',
+        icon: 'form',
+        route: '/form'
       }
     ]
   })
