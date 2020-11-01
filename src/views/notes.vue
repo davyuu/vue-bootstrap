@@ -101,26 +101,26 @@ h1
         width: calc(100% / 3)
 
   .card
+    +shadow
     display: block
     height: 100%
     padding: d(4) d(2)
     border-radius: d(1)
-    box-shadow: $shadow
     text-align: center
 
     p
-      margin-top: d(2)
       +body-medium
       +fc-dark
+      margin-top: d(2)
 
 form
+  +shadow
   display: flex
   flex-direction: column
   justify-content: center
   margin-top: d(4)
   padding: d(4) d(2)
   border-radius: d(1)
-  box-shadow: $shadow
 
   h2
     +title-medium

@@ -21,4 +21,16 @@
 
   input, select, textarea
     +body-small
+    +transition
     margin-top: d(.5)
+    padding: d(1)
+    border-color: $gray-light
+    border-radius: d(.5)
+
+    &:focus
+      +focus-glow
+
+    &::placeholder
+      +fc-dark
+      font-style: italic
+      opacity: .8

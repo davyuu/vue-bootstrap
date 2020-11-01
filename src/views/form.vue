@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     submitForm (event) {
-      console.log('event:', event)
+      console.log('value:', event.target.value)
     }
   }
 }
@@ -96,13 +96,13 @@ section
   margin-top: d(4)
 
 form
+  +shadow
   display: flex
   flex-direction: column
   justify-content: center
   margin-top: d(4)
   padding: d(4) d(2)
   border-radius: d(1)
-  box-shadow: $shadow
 
   input,
   textarea,

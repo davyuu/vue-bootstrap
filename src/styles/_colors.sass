@@ -7,28 +7,40 @@
 //-------------------------------------------------------------------
 
 $white          : #FFFFFF
-$gray-xx-light  : #F6F6F6
-$gray-x-light   : #DBE0EB
+$gray-light-xx  : #F6F6F6
+$gray-light-x   : #DBE0EB
 $gray-light     : #ABADB5
 $gray-medium    : #525F7A
 $gray-dark      : #454A54
-$gray-x-dark    : #2E3038
-$gray-xx-dark   : #17181C
+$gray-dark-x    : #2E3038
+$gray-dark-xx   : #17181C
 $black          : #000000
 
 // Theme Colors
 //-------------------------------------------------------------------
 
-$color-primary      : #3852FF
+$color-primary-dark-x: #126B91
+$color-primary-dark: #1BA1DA
+$color-primary: #5BC0EB
+$color-primary-light: #A4DCF4
+$color-primary-light-x: #EDF8FD
+
+// Utility Colours
+//-------------------------------------------------------------------
+
+$color-ui-info: $color-primary
+$color-ui-error: #D8250E
+$color-ui-success: #79CF17
+$color-ui-warn: #FDA832
 
 // Font Colours
 //-------------------------------------------------------------------
 
 @mixin fc-dark-strong
-  color: $gray-x-dark
+  color: $gray-dark-x
 @mixin fc-dark
   color: $gray-medium
 @mixin fc-light-strong
   color: $white
 @mixin fc-light
-  color: $gray-x-light
+  color: $gray-light-x

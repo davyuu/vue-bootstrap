@@ -7,7 +7,9 @@
 
         <option
           v-if="placeholder"
+          class="placeholder"
           disabled
+          hidden
           value=""
         >{{ placeholder }}</option>
 
@@ -48,5 +50,10 @@ export default {
 
 .wrapper
   +form-element
+
+  select
+
+    &:invalid
+      color: red
 
 </style>

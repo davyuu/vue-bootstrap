@@ -11,6 +11,11 @@
 <script>
 export default {
   props: {
+    value: {
+      type: String,
+      required: false,
+      default: ''
+    },
     label: {
       type: String,
       required: true
@@ -19,9 +24,11 @@ export default {
       type: String
     }
   },
-  data: () => ({
-    value: ''
-  })
+  methods: {
+    onChange(e) {
+      this.$emit('input', e.target ? e.target.value : e)
+    }
+  }
 }
 </script>
 

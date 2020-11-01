@@ -20,28 +20,23 @@ $s-small: d(65)
 // Shadows
 //-------------------------------------------------------------------
 
-$shadow: 0 4px 8px 0 rgba($black, .2)
-$shadow-thick: 0 8px 16px 0 rgba($black, .2)
+=shadow($multiplier: 1, $color: $gray-dark-xx)
+  box-shadow: 0 d(.5)*$multiplier d(1)*$multiplier 0 rgba($gray-dark-xx, .2)
+
+=focus-glow($multiplier: 1, $color: $color-primary-light)
+  box-shadow: 0 0 0 3px $color-primary-light, 0 0 d(1)*$multiplier rgba($color, .2)
+  outline: none
 
 
 
 //-------------------------------------------------------------------
-// Timing and Easings
-//-------------------------------------------------------------------
-
-$t       : .35s
-$t-snap  : cubic-bezier(.3, .9, .4, .98)
-$t-drift : cubic-bezier(.05, .31, .7, 1)
-$t-shine : cubic-bezier(.96, .43, .55, .8)
-
 // Transitions
 //-------------------------------------------------------------------
 
-=transition-slow($properties:all)
-  transition: $properties $t*1.5 $t-drift
-  will-change: auto
-=transition-fast($properties:all)
-  transition: $properties $t $t-snap
+$t: .3s
+
+=transition($properties: all, $timing-multiplier: 1)
+  transition: $properties $t*$timing-multiplier
   will-change: auto
 
 
