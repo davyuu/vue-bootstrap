@@ -31,7 +31,7 @@ export default {
 
 div.icon
   display: inline-block
-  fill: $gray-x-dark
+  fill: $gray-dark-x
 
   &.tiny
     height: d(2)

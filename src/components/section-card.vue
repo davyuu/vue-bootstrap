@@ -29,21 +29,21 @@ export default {
 @import '@/styles'
 
 .card
+  +shadow
+  +transition
   display: block
   height: 100%
   padding: d(4) d(2)
   border-radius: d(1)
-  box-shadow: $shadow
   text-align: center
-  +transition-fast
 
   &:hover
-    box-shadow: $shadow-thick
+    +shadow(2)
 
   p
-    margin-top: d(2)
     +body-medium
     +fc-dark
+    margin-top: d(2)
 
   .icon
     fill: #5938d9
